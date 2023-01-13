@@ -1,0 +1,89 @@
+<html> 
+<head>
+    <title>Week Widget Notion</title> 
+    <style>
+      #lbl {
+        display: flex;
+        font-family: sans-serif;
+        font-size: 16pt;
+        color: #000000;
+        padding: 3px;
+        border: 1px solid #ffffff;
+        justify-content: left;
+        line-height: 1.5;
+        height:85%;
+        font-weight: bold;
+        flex-direction: row;
+      }
+
+      #container {
+        display: flex;
+        align-items: flex-start;
+      }
+
+
+      body{
+          background-color: #ffffff;
+      }
+    </style>
+</head>
+<body>
+    <div id="lbl"></div>
+</body>
+
+<script>
+    var today = new Date();
+
+    var week;
+
+    if (today.getMonth == 0)
+        if(today.getDay >= 9 && today.getDay <= 15)
+            week = 'week 1';
+        else if(today.getDay >= 16 && today.getDay <= 22)
+            week = 'week 2';
+        else if(today.getDay >= 23 && today.getDay <= 29)
+            week = 'week 3';
+        else
+            week = 'week 4';
+    else if (today.getMonth == 1)
+        if(today.getDay >= 1 && today.getDay <= 5)
+            week = 'week 4';
+        else if(today.getDay >= 6 && today.getDay <= 12)
+            week = 'week 5';
+        else if(today.getDay >= 13 && today.getDay <= 19)
+            week = 'week 6';
+        else if(today.getDay >= 20 && today.getDay <= 26)
+            week = 'week 7';
+        else
+            week = 'week 8';
+    else if (today.getMonth == 2)
+        if(today.getDay >= 1 && today.getDay <= 5)
+            week = 'week 8';
+        else if(today.getDay >= 6 && today.getDay <= 12)
+            week = 'week 9';
+        else if(today.getDay >= 13 && today.getDay <= 19)
+            week = 'spring break';
+        else if(today.getDay >= 20 && today.getDay <= 26)
+            week = 'week 10';
+        else
+            week = 'week 11';
+    else if (today.getMonth == 3)
+        if(today.getDay >= 1 && today.getDay <= 2)
+            week = 'week 12';
+        else if(today.getDay >= 3 && today.getDay <= 9)
+            week = 'week 13';
+        else if(today.getDay >= 10 && today.getDay <= 16)
+            week = 'week 14';
+        else if(today.getDay >= 17 && today.getDay <= 23)
+            week = 'week 15';
+        else
+            week = 'finals week';
+    
+
+    document.getElementById('lbl').innerHTML = `
+        <div class="container">
+          <div class="week">${week}</div>
+        <div/>
+    `;
+</script> 
+</html>
